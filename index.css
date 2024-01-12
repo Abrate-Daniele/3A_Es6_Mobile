@@ -5,7 +5,11 @@
     width: 200px;
     height: 150px;
 }
-
+header a{
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+}
 .card{
     width: 200px;
     height: 300px;
@@ -18,12 +22,10 @@
     padding: 10px;
     margin: 2.5px;
 }
-
 .card > div:not(.img){
     width: 80%;
-    text-align: justify;
+    text-align: center;
 }
-
 body{
     height: 100vh;
     display: flex;
@@ -32,35 +34,57 @@ body{
     align-items: center;
     margin: 0px;
 }
-
 main{
     display: flex;
-    flex-direction: row-reverse ;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-
 header{
     display: flex;
     justify-content: space-between;
     width: 100vw;
 }
-
 ul{
     padding: 0px;
     display: flex;
     list-style: none;
 }
-
+.menu{
+    visibility: hidden;
+}
+header ul{
+    visibility:visible;
+}
+header button:focus ul{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 40%;
+}
+button{
+    border: 0px;
+}
+/*:hover --> intercetta il passaggio del mouse
+:focus --> intercetta il cambiamento di focus (l'elemento selezionato secondo il browser)
+:active --> 
 /*
     Media query: se le dimensioni dello schermo soddisfano le condizioni indicate tra le parentesi tonde vengono applicate le regole interne alle parentesi graffe
 */
-
 #tipo::after{
     content: "COMPUTER";
 }
-
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 500px){
     #tipo::after{
         content: "MOBILE";
     }
-    
+    .menu{
+        visibility:visible;
+    }
+    header span ul{
+        display:none;
+    }
+    header button:focus{
+        height: 75px;
+        font-size: 12px;
+    }
 }
