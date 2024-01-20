@@ -6,40 +6,33 @@ body{
     margin: 0px;
     height: 100vh;
 }
-
 header{
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
-
 ul{
     list-style-type: none;
     display: flex;
     padding: 0px;
     margin-left:-10%;
 }
-
 li{
     margin-left:10px;
     color:black;
 }
-
 li a{
     color:black;
     text-decoration: none;
 }
-
 li a:hover{
     color:blue
 }
-
 main{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
-
 .card{
     width: 200px;
     height: 300px;
@@ -51,7 +44,6 @@ main{
     padding: 10px;
     margin-left: 5px;
 }
-
 /*
     :not() -> permette di escludere gli elementi contenuti 
             nelle parentesi
@@ -60,7 +52,6 @@ main{
     width: 80%;
     text-align: center;
 }
-
 .img{
     width: 150px;
     height: 150px;
@@ -68,16 +59,13 @@ main{
     background-size: contain;
     background-repeat: no-repeat;
 }
-
 #tipo::after{
     content: "COMPUTER";
     color:blue;
 }
-
 .menu{
     visibility: hidden;
 }
-
 .menu ul{
     visibility: visible;
     width: 100vw;
@@ -85,30 +73,22 @@ main{
     /*position: absolute;
     left: 0px;*/
 }
-
 /*
     MEDIA QUERY: Se le dimensioni dello schermo soddisfano 
                 le condizioni indicate tra parentesi tonde 
                 vengono attivate le regole interne alle parentesi graffe
-
     max-width:NUMERO -> le regole vengono attivate se lo schermo ha 
                     larghezza minore di NUMERO
     min-width:numero -> le regole vengono attivate se lo schermo ha 
                     larghezza superiore al NUMERO
-
-
-    
 */
 @media screen and (max-width: 500px){
-
     /*
         :hover -> Intercetta il passaggio 
             del mouse sull'elemento
-
         :focus -> Intercetta il cambiamento 
             di focus (elemento selezionato 
             secondo il browser)
-        
         :active -> Intercetta il click su 
             un elemento  
     */
@@ -119,28 +99,22 @@ main{
         left: 10%;
         font-size: 12px;
     }
-
     #tipo::after{
         content: "MOBILE";
         color:red;
     }
-
     .menu{
         visibility: visible;
     }
-
     li{
         font-size: 14pt;
     }
-
     header button ul{
         display:none;
     }
-
     header button:focus{
         height: 150px;
     }
-
     button{
         border:0px;
         background-color: white;
