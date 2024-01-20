@@ -1,15 +1,45 @@
-.img{
-    background-image: url(https://www.ultimeinfo.com/wp-content/uploads/2023/11/Lorem-Ipsum-che-cosa-significa-e-perche-viene-utilizzato.webp);
-    background-size: contain;
-    background-repeat: repeat;
-    width: 200px;
-    height: 150px;
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px;
+    height: 100vh;
 }
-header a{
+
+header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+ul{
+    list-style-type: none;
+    display: flex;
+    padding: 0px;
+    margin-left:-10%;
+}
+
+li{
+    margin-left:10px;
+    color:black;
+}
+
+li a{
+    color:black;
     text-decoration: none;
-    color: black;
-    padding: 5px;
 }
+
+li a:hover{
+    color:blue
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .card{
     width: 200px;
     height: 300px;
@@ -17,74 +47,105 @@ header a{
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     padding: 10px;
-    margin: 2.5px;
+    margin-left: 5px;
 }
+
+/*
+    :not() -> permette di escludere gli elementi contenuti 
+            nelle parentesi
+*/
 .card > div:not(.img){
     width: 80%;
     text-align: center;
 }
-body{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0px;
+
+.img{
+    width: 150px;
+    height: 150px;
+    background-image: url(https://www.ultimeinfo.com/wp-content/uploads/2023/11/Lorem-Ipsum-che-cosa-significa-e-perche-viene-utilizzato.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
-main{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+
+#tipo::after{
+    content: "COMPUTER";
+    color:blue;
 }
-header{
-    display: flex;
-    justify-content: space-between;
-    width: 100vw;
-}
-ul{
-    padding: 0px;
-    display: flex;
-    list-style: none;
-}
+
 .menu{
     visibility: hidden;
 }
-header ul{
-    visibility:visible;
+
+.menu ul{
+    visibility: visible;
+    width: 100vw;
+    justify-content: center;
+    /*position: absolute;
+    left: 0px;*/
 }
-header button:focus ul{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    left: 40%;
-}
-button{
-    border: 0px;
-}
-/*:hover --> intercetta il passaggio del mouse
-:focus --> intercetta il cambiamento di focus (l'elemento selezionato secondo il browser)
-:active --> 
+
 /*
-    Media query: se le dimensioni dello schermo soddisfano le condizioni indicate tra le parentesi tonde vengono applicate le regole interne alle parentesi graffe
+    MEDIA QUERY: Se le dimensioni dello schermo soddisfano 
+                le condizioni indicate tra parentesi tonde 
+                vengono attivate le regole interne alle parentesi graffe
+
+    max-width:NUMERO -> le regole vengono attivate se lo schermo ha 
+                    larghezza minore di NUMERO
+    min-width:numero -> le regole vengono attivate se lo schermo ha 
+                    larghezza superiore al NUMERO
+
+
+    
 */
-#tipo::after{
-    content: "COMPUTER";
-}
 @media screen and (max-width: 500px){
+
+    /*
+        :hover -> Intercetta il passaggio 
+            del mouse sull'elemento
+
+        :focus -> Intercetta il cambiamento 
+            di focus (elemento selezionato 
+            secondo il browser)
+        
+        :active -> Intercetta il click su 
+            un elemento  
+    */
+    header button:focus ul{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 10%;
+        font-size: 12px;
+    }
+
     #tipo::after{
         content: "MOBILE";
+        color:red;
     }
+
     .menu{
-        visibility:visible;
+        visibility: visible;
     }
-    header span ul{
+
+    li{
+        font-size: 14pt;
+    }
+
+    header button ul{
         display:none;
     }
+
     header button:focus{
-        height: 75px;
-        font-size: 12px;
+        height: 150px;
+    }
+
+    button{
+        border:0px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
     }
 }
