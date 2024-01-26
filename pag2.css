@@ -1,0 +1,23 @@
+button:focus{
+    position: absolute;
+    top: 0px;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button:focus > div{
+    background-color: white;
+    width: 500px;
+    height: 400px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+button>div{
+    display: none;
+}
